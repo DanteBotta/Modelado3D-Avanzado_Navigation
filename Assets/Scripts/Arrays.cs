@@ -5,10 +5,14 @@ using UnityEngine;
 public class Arrays : MonoBehaviour
 {
     public int[] edades = new int[4];
+
+    bool TodosIguales = false;
+    int CantidadRepeticiones = 0;
     // Start is called before the first frame update
     void Start()
     {
-        edades[0] = Random.Range(0, 10);
+        edades[0] = Random.Range(0, 11);
+        edades[2] = 46;
     }
 
     // Update is called once per frame
@@ -22,6 +26,17 @@ public class Arrays : MonoBehaviour
         { 
             SquareOfIndex(edades); 
         }
+        
+        TodosIguales = SonIguales(edades);
+        if (!TodosIguales)
+        {
+            CantidadRepeticiones++;
+            RandomNumbers(edades);
+        }
+        else
+        {
+            Debug.Log(CantidadRepeticiones);
+        } 
     }
 
     void ClearArray(int[] array)
@@ -42,6 +57,22 @@ public class Arrays : MonoBehaviour
 
     void RandomNumbers(int[] array)
     {
+        for (int i = 0; i < array.Length; i++)
+        {
+            array[i] = Random.Range(1, 3);
+        }
+    }
 
+    bool SonIguales(int[] array)
+    {
+        for (int i = 1; i < array.Length; i++)
+        {
+            if (array[i] != array[0])
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
