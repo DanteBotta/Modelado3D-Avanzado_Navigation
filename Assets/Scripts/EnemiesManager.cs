@@ -11,8 +11,6 @@ public class EnemiesManager : MonoBehaviour
     void Start()
     {
         enemies = FindObjectsOfType<Enemy>();
-
-        Debug.Log(enemies[enemies.Length - 1].damagePoints);
     }
 
     // Update is called once per frame
