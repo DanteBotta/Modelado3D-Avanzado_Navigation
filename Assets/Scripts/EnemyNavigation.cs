@@ -18,9 +18,6 @@ public class EnemyNavigation : MonoBehaviour
     int CajaRandom;
     int EnemigoRandom;
 
-    bool ArriveBox = false;
-    bool ArriveEnemy = false;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +42,6 @@ public class EnemyNavigation : MonoBehaviour
         {
             SetDamagePointTo(Boxs[CajaRandom].DamagePoint);
             destination = enemies[EnemigoRandom].transform;
-            ArriveBox = true;
         }
     }
 
